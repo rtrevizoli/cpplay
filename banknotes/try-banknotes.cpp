@@ -26,6 +26,10 @@ std::vector<std::string> read_cases()
 
 int main()
 {
-    read_cases();
+    std::vector<std::string> input_cases = read_cases();
+
+    for (int i = 0; i < cases.size(); i++)
+        check(input_cases[i], expected_outputs[i]);
+
     return 0;
 }
