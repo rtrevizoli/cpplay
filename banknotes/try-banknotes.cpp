@@ -14,12 +14,12 @@ std::vector<std::string> read_cases()
 
     std::vector<std::string> test_cases = {};
 
-    for (std::string line; std::getline(std::cin, line);)
+    for (std::string line; std::getline(file, line);)
     {
         std::cout << line << std::endl;
         test_cases.push_back(line);
     }
-    
+
     return test_cases;
 
 }
