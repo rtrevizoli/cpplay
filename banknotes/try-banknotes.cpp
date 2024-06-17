@@ -36,5 +36,49 @@ int main()
     // for (int i = 0; i < cases.size(); i++)
     //     check(input_cases[i], expected_outputs[i]);
 
+    std::vector<int> notes = { 100, 50, 20, 10, 5, 2, 1 };
+    std::vector<int> amount_notes_to_withdraw(notes.size());
+
+    std::string input = "";
+    std::getline(std::cin, input);
+    int remaining_amount_to_withdraw = std::stoi(input);
+
+    std::cout << remaining_amount_to_withdraw << std::endl;
+
+    std::cout << "RTX | DEBUG | 0" <<std::endl;
+    for (int i = 0 ; i < notes.size(); i++)
+    {
+        std::cout << "RTX | DEBUG | 1" <<std::endl;
+        while (remaining_amount_to_withdraw >= notes[i])
+        {
+            std::cout << "RTX | DEBUG | 2" <<std::endl;
+
+            std::cout << "RTX | DEBUG | 2. remaining_amount_to_withdraw - notes[i] => " 
+                << remaining_amount_to_withdraw << " - "
+                << notes[i]
+                << " (" << remaining_amount_to_withdraw - notes[i] << ")."
+                << std::endl;
+
+            std::cout << "RTX | DEBUG | 3" <<std::endl;
+            remaining_amount_to_withdraw -= notes[i];
+            amount_notes_to_withdraw[i]++;
+
+            std::cout << "RTX | DEBUG | 4" <<std::endl;
+
+        }
+        std::cout << "RTX | DEBUG | 5" <<std::endl;
+        continue;
+    }
+
+    for (int& note : notes)
+        std::cout << note << "\t";
+
+    std::cout << std::endl;
+
+    for (int& amount_note_to_withdraw : amount_notes_to_withdraw)
+        std::cout << amount_note_to_withdraw << "\t";
+
+    std::cout << std::endl;
+
     return 0;
 }
